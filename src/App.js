@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Scrollbars } from 'react-custom-scrollbars';
+import ReactDOM from 'react-dom';
+import {BrowserRouter} from "react-router-dom";
 import './App.css';
 
 const real = require('./Photos/Real.PNG');
@@ -261,12 +262,12 @@ class Portfolio extends Component {
                   "A formal analysis of multiple algorithms in terms of both time and operational complexity.",
                   "A replication of the classic Master Mind game, made in React",
                   "An analysis of CPU efficiency under decreasing power limits.",
-                  "The code for this website, made from scratch using React", "BALLwerweradgegER", "BALasdLER"];
+                  "The code for this website, made from scratch using React",];
     assoc_link = ["https://github.com/john-salman/Real-Class",
                   "https://github.com/john-salman/Algorithm_Analysis_P1",
                   "https://github.com/john-salman/masterMind",
                   "https://github.com/cs385/power_limit",
-                  "https://github.com/john-salman/jsalman_prof", "yuqweqwrp", "yurh5rhp"];
+                  "https://github.com/john-salman/jsalman_prof",];
 
     constructor(props) {
         super(props);
@@ -387,11 +388,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="full-wrap">
-        <About/>
-        <div className="seperator"></div>
-        <Portfolio/>
-      </div>
+        <BrowserRouter>
+          <div className="full-wrap">
+            <About/>
+            <div className="seperator"></div>
+            <Portfolio/>
+          </div>
+        </BrowserRouter>
     );
   }
 }

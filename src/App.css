@@ -49,6 +49,7 @@
     max-height: 500px;
   padding-left: 5px;
   padding-right: 5px;
+    margin-bottom: 5px;
 
   transition-property: all;
   transition-duration: .5s;
@@ -112,6 +113,7 @@
   max-height: 500px;
   padding-left: 5px;
   padding-right: 5px;
+    margin-bottom: 5px;
 
   transition-property: all;
   transition-duration: .5s;

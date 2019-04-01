@@ -11,7 +11,7 @@ const masterMind = require('./Photos/MasterMind.PNG');
 const thisWeb = require('./Photos/This.PNG');
 const cpu = require('./Photos/CPU.png');
 
-const NUM_PROJECTS = 5;
+const NUM_PROJECTS = 4;
 
 class Me extends Component {
   render () {
@@ -298,7 +298,7 @@ class Portfolio extends Component {
     new() {
         if (!this.state.user_control) {
             let new_index = this.state.index + 1;
-            if (new_index > 6) {
+            if (new_index > NUM_PROJECTS) {
                 new_index = 0;
             }
             let new_image = this.images[new_index];

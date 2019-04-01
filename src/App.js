@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Scrollbars } from 'react-custom-scrollbars';
 import './App.css';
 
 const real = require('./Photos/Real.PNG');
+const euclid = require('./Photos/Euclid.png');
 const shmeeb = require('./Photos/Shmeembus.PNG');
+const headshot = require('./Photos/Headshot.png');
+const masterMind = require('./Photos/MasterMind.PNG');
+const thisWeb = require('./Photos/This.PNG');
+const cpu = require('./Photos/CPU.png');
 
 const NUM_PROJECTS = 6;
 
@@ -11,7 +16,7 @@ class Me extends Component {
   render () {
     return (
       <div className="me">
-          <img className="prof-pic" src={shmeeb} alt="A photo of myself"/>
+          <img className="prof-pic" src={headshot} alt="A photo of myself"/>
           <p className="name">John Salman</p>
           <p>jhnsalman@gmail.com</p>
           <a href="https://github.com/john-salman">Github</a>
@@ -29,11 +34,20 @@ class Personal extends Component {
             <span >About Me</span>
           </div>
           <div className={"personal-text"  + (this.props.visible ? "-click": "")}>
-            <span><p>I am a graduating senior from Sonoma State. I pride myself on
-                                            being well versed in a number of Computer Science disciplines.
-                                            including algorithm design, language design, CPU benchmarking,
-                                            full-stack development, and anything Object-Oriented.
-            </p></span>
+            <span><p>There is nothing better than learning new technology, writing quality code, and first time compiles. I am a
+                     a graduating senior from the Computer Science Department at Sonoma State. I'm hungry for the oppurtunity to
+                     begin my professional career, where I can spend my days contributing to projects bigger than myself. Software is
+                     has given so much to this world already, and I'm looking to make my mark.
+            </p>
+                  <p>In school, I have always gone above and beyond to gain the most in depth understanding of all domains of computer science.
+                    I take pride in being a jack-of-all-trades, and enjoy throwing myself into the deep end. Building large scale applications
+                    will always put a smile on my face, but I get just as much out of building websites or digging around beneath operating systems.
+                  </p>
+                <p>Rock climbing is my next greatest passion. It is hard to beat the feeling of topping out on a multi-week project route, but anytime
+                   I can get my blood pumping and sweat running is a good time to me. I look for any chance to get outside, be it trail-running,
+                    disk-golf, fishing, gardening, camping, and anything that helps me finish the day dirt-covered and tired.
+                </p>
+            </span>
           </div>
         </div>
     );
@@ -53,7 +67,6 @@ class Education extends Component {
                   <p><em>Bachelor of Science</em>, Computer Science</p>
                   <p>Expected Graduation Date: May 2019</p>
                   <p>GPA: 3.49</p></span>
-
                 </div>
             </div>
         );
@@ -69,8 +82,12 @@ class Tech extends Component {
                     <span>Tech</span>
                 </div>
                 <div className={"tech-text"  + (this.props.visible ? "-click": "")}>
-            <span><p>COMPOOTER
-            </p></span>
+            <span><p><strong>Proficient Languages :</strong> C++, Python, Javascript (+ NodeJS), HTML, CSS, C, SQL</p>
+                  <p><strong>Familiar Languages :</strong> Bash, Scheme, LaTeX</p>
+                  <p><strong>Database :</strong> MySQL, MariaDB, AWSCloud, Firebase</p>
+                  <p><strong>Framework :</strong> MVC, React(Native), Amazon Alexa</p>
+                  <p><strong>Misc. :</strong> Unix Command Line, CPU Analysis, Algorithm Analysis, Language Design</p>
+            </span>
                 </div>
             </div>
         );
@@ -83,11 +100,19 @@ class Work extends Component {
         return (
             <div className={"work-container"} onClick={() => this.props.workClick()}>
                 <div className={"work-title" + (this.props.hover ? "-hover" : "") + (this.props.visible ? "-click": "")} onMouseEnter={() => this.props.workHover(true)} onMouseLeave={() => this.props.workHover(false)}>
-                    <span>Work Experience</span>
+                    <span>Volunteering</span>
                 </div>
                 <div className={"work-text"  + (this.props.visible ? "-click": "")}>
-            <span><p>Done did working
-            </p></span>
+            <span><p><strong>NomaHacks 2019 Organizer</strong></p>
+                    <p>I maintained the website, adding new assets, and updating old. I visited classrooms to spread the word, and increase attendance.
+                        I also volunteered for the whole event, staying overnight to help the event run smoothly.</p>
+                    <br/>
+                    <p><strong>Red Cross Shelter Volunteer</strong></p>
+                    <p>While my school was evacuated during the Tubbs Fire, I volunteered at the main Red Cross evacuation shelter at the Sonoma State Fairgrounds.
+                        I was placed in charge of the inflow and outflow of the main donation area, ensuring that donations were taken in and distributed to neighboring
+                        shelters efficiently. I volunteered for 10 days, and coordinated with county officials and other volunteer agencies to help local shelters
+                        obtain critical supplies.</p>
+            </span>
                 </div>
             </div>
         );
@@ -182,29 +207,29 @@ class About extends Component {
 
     render () {
     return (
-      <div className="about">
-        <Me/>
-        <Personal
-              hover={this.state.personalHover}
-              visible={this.state.personalVisible}
-              personalClick={this.personalClick}
-              personalHover={this.personalHover}/>
-        <Education
-              hover={this.state.educationHover}
-              visible={this.state.educationVisible}
-              educationClick={this.educationClick}
-              educationHover={this.educationHover}/>
-        <Tech
-              hover={this.state.techHover}
-              visible={this.state.techVisible}
-              techClick={this.techClick}
-              techHover={this.techHover}/>
-        <Work
-              hover={this.state.workHover}
-              visible={this.state.workVisible}
-              workClick={this.workClick}
-              workHover={this.workHover}/>
-      </div>
+              <div className="about">
+                <Me/>
+                <Personal
+                      hover={this.state.personalHover}
+                      visible={this.state.personalVisible}
+                      personalClick={this.personalClick}
+                      personalHover={this.personalHover}/>
+                <Education
+                      hover={this.state.educationHover}
+                      visible={this.state.educationVisible}
+                      educationClick={this.educationClick}
+                      educationHover={this.educationHover}/>
+                <Tech
+                      hover={this.state.techHover}
+                      visible={this.state.techVisible}
+                      techClick={this.techClick}
+                      techHover={this.techHover}/>
+                <Work
+                      hover={this.state.workHover}
+                      visible={this.state.workVisible}
+                      workClick={this.workClick}
+                      workHover={this.workHover}/>
+              </div>
     );
   }
 }
@@ -231,9 +256,17 @@ class Text extends Component {
 }
 
 class Portfolio extends Component {
-    images = [real, 0, 0, 0, 0, 0, 0];
-    assoc_text = ["This is an implementation of a more accurate C++ double class, works accurately on large floating numbers without error", "BA3wrER", "BALL2342ER", "BALLwfadsfrER", "BALLwerweradgegER", "BALasdLER", "BALLweweER"];
-    assoc_link = ["https://github.com/john-salman/Real-Class", "ysdfasdurp", "yuverrp", "yurervrep", "yuqweqwrp", "yurh5rhp", "yuasdfsadrp"];
+    images = [real, euclid, masterMind, cpu, thisWeb, 0, 0, 0];
+    assoc_text = ["An implementation of a more accurate C++ double class, works accurately on large floating numbers without error.",
+                  "A formal analysis of multiple algorithms in terms of both time and operational complexity.",
+                  "A replication of the classic Master Mind game, made in React",
+                  "An analysis of CPU efficiency under decreasing power limits.",
+                  "The code for this website, made from scratch using React", "BALLwerweradgegER", "BALasdLER"];
+    assoc_link = ["https://github.com/john-salman/Real-Class",
+                  "https://github.com/john-salman/Algorithm_Analysis_P1",
+                  "https://github.com/john-salman/masterMind",
+                  "https://github.com/cs385/power_limit",
+                  "https://github.com/john-salman/jsalman_prof", "yuqweqwrp", "yurh5rhp"];
 
     constructor(props) {
         super(props);
@@ -356,6 +389,7 @@ class App extends Component {
     return (
       <div className="full-wrap">
         <About/>
+        <div className="seperator"></div>
         <Portfolio/>
       </div>
     );

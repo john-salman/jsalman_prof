@@ -388,13 +388,11 @@ class App extends Component {
 
   render() {
     return (
-        <BrowserRouter>
           <div className="full-wrap">
             <About/>
             <div className="seperator"></div>
             <Portfolio/>
           </div>
-        </BrowserRouter>
     );
   }
 }

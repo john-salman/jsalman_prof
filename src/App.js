@@ -11,7 +11,7 @@ const masterMind = require('./Photos/MasterMind.PNG');
 const thisWeb = require('./Photos/This.PNG');
 const cpu = require('./Photos/CPU.png');
 
-const NUM_PROJECTS = 6;
+const NUM_PROJECTS = 5;
 
 class Me extends Component {
   render () {
@@ -257,7 +257,7 @@ class Text extends Component {
 }
 
 class Portfolio extends Component {
-    images = [real, euclid, masterMind, cpu, thisWeb, 0, 0, 0];
+    images = [real, euclid, masterMind, cpu, thisWeb];
     assoc_text = ["An implementation of a more accurate C++ double class, works accurately on large floating numbers without error.",
                   "A formal analysis of multiple algorithms in terms of both time and operational complexity.",
                   "A replication of the classic Master Mind game, made in React",

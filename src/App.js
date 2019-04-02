@@ -36,15 +36,15 @@ class Personal extends Component {
           </div>
           <div className={"personal-text"  + (this.props.visible ? "-click": "")}>
             <span><p>There is nothing better than learning new technology, writing quality code, and first time compiles. I am a
-                     a graduating senior from the Computer Science Department at Sonoma State. I'm hungry for the oppurtunity to
-                     begin my professional career, where I can spend my days contributing to projects bigger than myself. Software is
+                     a graduating senior from the Computer Science Department at Sonoma State. I'm hungry for the opportunity to
+                     begin my professional career, where I can spend my days contributing to projects bigger than myself. Software
                      has given so much to this world already, and I'm looking to make my mark.
             </p>
                   <p>In school, I have always gone above and beyond to gain the most in depth understanding of all domains of computer science.
                     I take pride in being a jack-of-all-trades, and enjoy throwing myself into the deep end. Building large scale applications
                     will always put a smile on my face, but I get just as much out of building websites or digging around beneath operating systems.
                   </p>
-                <p>Rock climbing is my next greatest passion. It is hard to beat the feeling of topping out on a multi-week project route, but anytime
+                <p>Rock climbing is my next greatest passion. It is hard to beat the feeling of topping out on a multi-week project route, but whenever
                    I can get my blood pumping and sweat running is a good time to me. I look for any chance to get outside, be it trail-running,
                     disk-golf, fishing, gardening, camping, and anything that helps me finish the day dirt-covered and tired.
                 </p>

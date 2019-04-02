@@ -298,7 +298,7 @@ class Portfolio extends Component {
     new() {
         if (!this.state.user_control) {
             let new_index = this.state.index + 1;
-            if (new_index > NUM_PROJECTS) {
+            if (new_index > 4) {
                 new_index = 0;
             }
             let new_image = this.images[new_index];
@@ -347,11 +347,10 @@ class Portfolio extends Component {
 
     goRight() {
         let right_index = this.state.index + 1;
-        console.log("We're trying: ", right_index);
-        if (right_index > NUM_PROJECTS) {
+        if (right_index > 4) {
             right_index = 0;
         }
-
+        console.log("We're trying: ", right_index);
         let new_image = this.images[right_index];
         let new_text = this.assoc_text[right_index];
         let new_link= this.assoc_link[right_index];

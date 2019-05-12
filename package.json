@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "inline-style-prefixer": "^5.0.4",
     "react": "^16.8.5",
     "react-custom-scrollbars": "^4.2.1",

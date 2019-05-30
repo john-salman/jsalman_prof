@@ -4,9 +4,24 @@ import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import blueGrey from '@material-ui/core/colors/blueGrey';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
+import { Scrollbars } from 'react-custom-scrollbars';
+
+import './SideBar.css';
+
+const primary = blueGrey[500];
 const headshot = require('../Photos/Headshot.png');
 
+const theme = createMuiTheme({
+    palette: {
+        primary: { main: purple[500] }, // Purple and green play nicely together.
+        secondary: { main: '#11cb5f' }, // This is just green.A700 as hex.
+    },
+});
 
 const ExpansionPanel = withStyles({
     root: {
@@ -26,7 +41,6 @@ const ExpansionPanel = withStyles({
 
 const ExpansionPanelSummary = withStyles({
     root: {
-        backgroundColor: 'rgba(0,0,0,.03)',
         borderBottom: '1px solid rgba(0,0,0,.125)',
         marginBottom: -1,
         minHeight: 56,
@@ -35,6 +49,7 @@ const ExpansionPanelSummary = withStyles({
         },
     },
     content: {
+        color: 'rgba(255, 255, 255, 0.85)',
         '&$expanded': {
             margin: '12px 0',
         },
@@ -52,7 +67,7 @@ const ExpansionPanelDetails = withStyles(theme => ({
 
 class SideBar extends React.Component {
     state = {
-        expanded: 'panel1',
+        expanded: '',
     };
 
     handleChange = panel => (event, expanded) => {
@@ -77,7 +92,7 @@ class SideBar extends React.Component {
                     onChange={this.handleChange('panel1')}
                 >
                     <ExpansionPanelSummary>
-                        <Typography>About Me</Typography>
+                        <Button>About Me</Button>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography>
@@ -103,14 +118,14 @@ class SideBar extends React.Component {
                     onChange={this.handleChange('panel2')}
                 >
                     <ExpansionPanelSummary>
-                        <Typography>Collapsible Group Item #2</Typography>
+                        <Typography className="title">Education</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography>
                             <p><strong>Sonoma State University</strong>, Rohnert Park</p>
-                            <p><em>Bachelor of Science with Distinction</em>, Computer Science</p>
-                            <p>Expected Graduation Date: May 2019</p>
-                            <p>GPA: 3.49</p>
+                            <p><em>B.S., Cum Laude with Distinction</em>, Computer Science</p>
+                            <p>Graduation Date: May 2019</p>
+                            <p>GPA: 3.52</p>
                         </Typography>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -120,7 +135,7 @@ class SideBar extends React.Component {
                     onChange={this.handleChange('panel3')}
                 >
                     <ExpansionPanelSummary>
-                        <Typography>Technical Proficiencies</Typography>
+                        <Typography className="title">Technical Proficiencies</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography>
@@ -134,15 +149,23 @@ class SideBar extends React.Component {
                 </ExpansionPanel>
                 <ExpansionPanel
                     square
-                    expanded={expanded === 'panel3'}
-                    onChange={this.handleChange('panel3')}
+                    expanded={expanded === 'panel4'}
+                    onChange={this.handleChange('panel4')}
                 >
                     <ExpansionPanelSummary>
-                        <Typography>Technical Proficiencies</Typography>
+                        <Typography>Volunteering</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography>
-
+                            <p><strong>NomaHacks 2019 Organizer</strong></p>
+                            <p>I maintained the website, adding new assets, and updating old. I visited classrooms to spread the word, and increase attendance.
+                                I also volunteered for the whole event, staying overnight to help the event run smoothly.</p>
+                            <br/>
+                            <p><strong>Red Cross Shelter Volunteer</strong></p>
+                            <p>While my school was evacuated during the Tubbs Fire, I volunteered at the main Red Cross evacuation shelter at the Sonoma State Fairgrounds.
+                                I was placed in charge of the inflow and outflow of the main donation area, ensuring that donations were taken in and distributed to neighboring
+                                shelters efficiently. I volunteered for 10 days, and coordinated with county officials and other volunteer agencies to help local shelters
+                                obtain critical supplies.</p>
                         </Typography>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -151,4 +174,4 @@ class SideBar extends React.Component {
     }
 }
 
-export default Sidebar;
+export default SideBar;

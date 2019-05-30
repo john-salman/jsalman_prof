@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^4.0.1",
+    "@material-ui/styles": "^4.0.1",
     "inline-style-prefixer": "^5.0.4",
     "react": "^16.8.5",
     "react-custom-scrollbars": "^4.2.1",

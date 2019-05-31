@@ -85,7 +85,7 @@ class App extends Component {
             if (new_index > NUM_PROJECTS) {
                 new_index = 0;
             }
-            let new_title = this.title[new_index];
+            let new_title = this.titles[new_index];
             let new_image = this.images[new_index];
             let new_text = this.assoc_text[new_index];
             let new_link = this.assoc_link[new_index];
@@ -114,11 +114,12 @@ class App extends Component {
 
     goLeft() {
         let left_index = this.state.index - 1;
+        console.log(left_index);
         if (left_index < 0) {
             left_index = NUM_PROJECTS;
         }
 
-        let new_title = this.title[left_index];
+        let new_title = this.titles[left_index];
         let new_image = this.images[left_index];
         let new_text = this.assoc_text[left_index];
         let new_link= this.assoc_link[left_index];

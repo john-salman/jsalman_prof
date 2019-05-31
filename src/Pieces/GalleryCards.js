@@ -24,14 +24,14 @@ const styles = {
 
 function GalleryCards (props) {
 
-    const {classes, image, link, text} = props;
+    const {classes, title, image, link, text} = props;
     return (
             <Card className={classes.card}>
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
                         image={image}
-                        title="Current Project"
+                        title={title}
                     />
                     <CardContent>
                         <Typography component="p">
@@ -41,7 +41,7 @@ function GalleryCards (props) {
                 </CardActionArea>
                 <CardActions>
                     <form>
-                        <Button type="submit" formaction={link} size="small" color="primary">
+                        <Button type="submit" formAction={link} size="small" color="primary">
                             <Code /><p>Source</p>
                         </Button>
                     </form>

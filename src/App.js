@@ -28,17 +28,26 @@ const euclid = require('./Photos/Euclid.png');
 //const masterMind = require('./Photos/MasterMind.PNG');
 const thisWeb = require('./Photos/This.PNG');
 const cpu = require('./Photos/CPU.png');
+const leg = require('./Photos/LEGv8.PNG');
+const advisor = require('./Photos/Advisor.PNG');
 
-const NUM_PROJECTS = 3;
+const NUM_PROJECTS = 5;
 
 class App extends Component {
-    images = [real, euclid, cpu, thisWeb];
+    titles = ["Real Class", "Advising Application", "LEGv8 Interpreter", "Algorithm Analysis", "CPU Benchmarking", "Website Source Code"];
+
+    images = [real, advisor, leg, euclid, cpu, thisWeb];
+
     assoc_text = ["An implementation of a more accurate C++ double class, works accurately on large floating numbers without error.",
+        "A front-end I designed for an Advising application, is built off a sql server and updates data in real time (server not spinning).",
+        "An application for interpreting LEGv8 programs, is modeled after classic debugging programs like GDB.",
         "A formal analysis of multiple algorithms in terms of both time and operational complexity.",
         "An analysis of CPU efficiency under decreasing power limits.",
         "The code for this website, made from scratch using React",];
 
     assoc_link = ['https://github.com/john-salman/Real-Class',
+        "https://github.com/john-salman/Advisor_UI",
+        "https://github.com/john-salman/LEGv8",
         "https://github.com/john-salman/Algorithm_Analysis_P1",
         "https://github.com/cs385/power_limit",
         "https://github.com/john-salman/jsalman_prof",];
@@ -47,6 +56,7 @@ class App extends Component {
         super(props);
 
         this.state = {
+            title: this.titles[0],
             image: this.images[0],
             text: this.assoc_text[0],
             link: this.assoc_link[0],
@@ -72,14 +82,16 @@ class App extends Component {
     new() {
         if (!this.state.user_control) {
             let new_index = this.state.index + 1;
-            if (new_index > 4) {
+            if (new_index > NUM_PROJECTS) {
                 new_index = 0;
             }
+            let new_title = this.title[new_index];
             let new_image = this.images[new_index];
             let new_text = this.assoc_text[new_index];
             let new_link = this.assoc_link[new_index];
 
             this.setState({
+                title: new_title,
                 image: new_image,
                 text: new_text,
                 link: new_link,
@@ -106,11 +118,13 @@ class App extends Component {
             left_index = NUM_PROJECTS;
         }
 
+        let new_title = this.title[left_index];
         let new_image = this.images[left_index];
         let new_text = this.assoc_text[left_index];
         let new_link= this.assoc_link[left_index];
 
         this.setState({
+            title: new_title,
             image: new_image,
             text: new_text,
             link: new_link,
@@ -121,15 +135,17 @@ class App extends Component {
 
     goRight() {
         let right_index = this.state.index + 1;
-        if (right_index > 4) {
+        if (right_index > NUM_PROJECTS) {
             right_index = 0;
         }
-        console.log("We're trying: ", right_index);
+
+        let new_title = this.titles[right_index];
         let new_image = this.images[right_index];
         let new_text = this.assoc_text[right_index];
         let new_link= this.assoc_link[right_index];
 
         this.setState({
+            title: new_title,
             image: new_image,
             text: new_text,
             link: new_link,
@@ -144,14 +160,14 @@ class App extends Component {
     return (
         <ThemeProvider theme={theme}>
         <div className="full-wrap">
-              <Paper className="about" elevation={1}>
+              <Paper className="about" elevation={2}>
                 <SideBar/>
               </Paper>
               <div className="portfolio-wrap">
                   <div className={"left-wrap" + (this.state.leftHover ? "-hover" : "")} onClick={() => this.goLeft()} onMouseEnter={() => this.leftHover(true)} onMouseLeave={() => this.leftHover(false)}>
                       <ArrowLeftRounded />
                   </div>
-                  <GalleryCards image={this.state.image} link={this.state.link} text={this.state.text}/>
+                  <GalleryCards title={this.state.title} image={this.state.image} link={this.state.link} text={this.state.text}/>
                   <div className={"right-wrap" + (this.state.rightHover ? "-hover" : "")} onClick={() => this.goRight()} onMouseEnter={() => this.rightHover(true)} onMouseLeave={() => this.rightHover(false)}>
                       <ArrowRightRounded/>
                   </div>

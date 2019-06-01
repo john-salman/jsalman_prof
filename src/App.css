@@ -18,16 +18,6 @@
     position: relative;
 }
 
-.about {
-    text-align: center;
-    width: 30%;
-    max-width: 30%;
-    left: 0;
-    max-height: 100%;
-    position: fixed;
-    overflow-y: auto;
-
-}
 
 .about::-webkit-scrollbar {
     left: 0;

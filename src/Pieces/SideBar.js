@@ -4,7 +4,7 @@ import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+//import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import blue from '@material-ui/core/colors/blue';
 
@@ -17,6 +17,8 @@ import './SideBar.css';
 
 const primary = blueGrey[500];
 const headshot = require('../Photos/Headshot.png');
+const github = require('../Photos/GitHub.svg');
+const linkedin = require('../Photos/LinkedIn.svg');
 
 const theme = createMuiTheme({
     palette: {
@@ -25,9 +27,17 @@ const theme = createMuiTheme({
     },
 });
 
+const Title =  withStyles({
+   root: {
+       color: 'white',
+       textAlign: 'center',
+   }
+}) (Typography);
+
 const ExpansionPanel = withStyles({
     root: {
-        border: '1px solid rgba(0,0,0,.125)',
+        borderTop: '1px solid rgba(0,0,0,.75)',
+        borderBottom:'1px solid rgba(0,0,0,.75)',
         boxShadow: 'none',
         '&:not(:last-child)': {
             borderBottom: 0,
@@ -43,7 +53,8 @@ const ExpansionPanel = withStyles({
 
 const ExpansionPanelSummary = withStyles({
     root: {
-        borderBottom: '1px solid rgba(0,0,0,.125)',
+        backgroundColor: '#5c6bc0',
+        //borderBottom: '1px solid rgba(0,0,0,.75)',
         marginBottom: -1,
         minHeight: 56,
         '&$expanded': {
@@ -89,8 +100,14 @@ class SideBar extends React.Component {
                     <div className="me">
                         <img className="prof-pic" src={headshot} alt="A photo of myself"/>
                         <p className="name">John Salman</p>
-                        <p>jhnsalman@gmail.com</p>
-                        <a href="https://github.com/john-salman">Github</a>
+                        <div className="me-left">
+                            <p>jhnsalman@gmail.com</p>
+                            <div className="logo-div">
+                                <a href="https://github.com/john-salman"><img alt="Github" src={github}/></a>
+                                <div style={{width: '15px'}}></div>
+                                <a href="https://www.linkedin.com/in/john-salman/"><img alt="LinkedIn" src={linkedin}/></a>
+                            </div>
+                        </div>
                     </div>
                     <ExpansionPanel
                         square
@@ -98,7 +115,7 @@ class SideBar extends React.Component {
                         onChange={this.handleChange('panel1')}
                     >
                         <ExpansionPanelSummary className="title">
-                            <Typography>About Me</Typography>
+                            <Title>About Me</Title>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                             <Typography>
@@ -124,7 +141,7 @@ class SideBar extends React.Component {
                         onChange={this.handleChange('panel2')}
                     >
                         <ExpansionPanelSummary>
-                            <Typography className="title">Education</Typography>
+                            <Title className="title">Education</Title>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                             <Typography>
@@ -141,7 +158,7 @@ class SideBar extends React.Component {
                         onChange={this.handleChange('panel3')}
                     >
                         <ExpansionPanelSummary>
-                            <Typography className="title">Technical Proficiencies</Typography>
+                            <Title className="title">Technical Proficiencies</Title>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                             <Typography>
@@ -159,7 +176,7 @@ class SideBar extends React.Component {
                         onChange={this.handleChange('panel4')}
                     >
                         <ExpansionPanelSummary style={{backGroundColor: blue[500]}}>
-                            <Typography>Volunteering</Typography>
+                            <Title>Volunteering</Title>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                             <Typography>

@@ -14,12 +14,27 @@ import Code from '@material-ui/icons/Code';
 const styles = {
     card: {
         maxWidth: 450,
+        backgroundColor: '#5c6bc0',
     },
     media: {
         height: 300,
         maxHeight: 600,
     },
 };
+
+const CardText = withStyles({
+    root: {
+        color: '#FFFFFF',
+    }
+}) (Typography);
+
+const StyledButton = withStyles({
+    root : {
+        color: '#FFFFFF',
+    }
+
+
+})(Button);
 
 
 function GalleryCards (props) {
@@ -34,16 +49,16 @@ function GalleryCards (props) {
                         title={title}
                     />
                     <CardContent>
-                        <Typography component="p">
+                        <CardText component="p">
                            {text}
-                        </Typography>
+                        </CardText>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
                     <form>
-                        <Button type="submit" formAction={link} size="small" color="primary">
+                        <StyledButton color={'#FFFFFF'} type="submit" formAction={link} size="small" color="primary">
                             <Code /><p>Source</p>
-                        </Button>
+                        </StyledButton>
                     </form>
                 </CardActions>
             </Card>

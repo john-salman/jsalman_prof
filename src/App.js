@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from "react-router-dom";
+//import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import blue from '@material-ui/core/colors/blue';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import { createMuiTheme, withStyles } from '@material-ui/core/styles';
+import { ThemeProvider} from '@material-ui/styles';
 
 import './App.css';
 
@@ -23,6 +24,24 @@ const theme = createMuiTheme({
     },
 });
 
+const StyledPaper = withStyles({
+    root: {
+        background: '#3f51b5',
+        textAlign: 'center',
+        width: '30%',
+        maxWidth: '30%',
+        left: 0,
+        maxHeight: '100%',
+        position: 'fixed',
+        overflowY: 'auto',
+        color: 'white',
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    },
+    label: {
+        textTransform: 'capitalize',
+    },
+})(Paper);
+
 const real = require('./Photos/Real.PNG');
 const euclid = require('./Photos/Euclid.png');
 //const masterMind = require('./Photos/MasterMind.PNG');
@@ -40,7 +59,7 @@ class App extends Component {
 
     assoc_text = ["An implementation of a more accurate C++ double class, works accurately on large floating numbers without error.",
         "A front-end I designed for an Advising application, is built off a sql server and updates data in real time (server not spinning).",
-        "An application for interpreting LEGv8 programs, is modeled after classic debugging programs like GDB.",
+        "An application for interpreting LEGv8 programs, modeled after classic debugging programs like GDB.",
         "A formal analysis of multiple algorithms in terms of both time and operational complexity.",
         "An analysis of CPU efficiency under decreasing power limits.",
         "The code for this website, made from scratch using React",];
@@ -161,9 +180,9 @@ class App extends Component {
     return (
         <ThemeProvider theme={theme}>
         <div className="full-wrap">
-              <Paper className="about" elevation={2}>
+              <StyledPaper className="about" elevation={2}>
                 <SideBar/>
-              </Paper>
+              </StyledPaper>
               <div className="portfolio-wrap">
                   <div className={"left-wrap" + (this.state.leftHover ? "-hover" : "")} onClick={() => this.goLeft()} onMouseEnter={() => this.leftHover(true)} onMouseLeave={() => this.leftHover(false)}>
                       <ArrowLeftRounded />

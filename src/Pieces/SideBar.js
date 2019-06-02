@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import blue from '@material-ui/core/colors/blue';
+import InsertDriveFile from '@material-ui/icons/InsertDriveFile';
+
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -102,12 +104,16 @@ class SideBar extends React.Component {
                     <div className="me">
                         <img className="prof-pic" src={headshot} alt="A photo of myself"/>
                         <p className="name">John Salman</p>
-                        <p>jhnsalman@gmail.com</p><Button type="submit" formAction={resume} target="_blank">Resume</Button>
-                            <div className="logo-div">
-                                <a href="https://github.com/john-salman"><img alt="Github" src={github}/></a>
-                                <div style={{width: '15px'}}></div>
-                                <a href="https://www.linkedin.com/in/john-salman/"><img alt="Linked In" src={linkedin}/></a>
-                            </div>
+                        <div className="info-div" color="#FFFFFF">
+                            <p>jhnsalman@gmail.com</p>
+                        </div>
+                        <div className="logo-div">
+                            <a href="https://github.com/john-salman"><img alt="Github" src={github}/></a>
+                            <div style={{width: '15px'}}></div>
+                            <a href="https://www.linkedin.com/in/john-salman/"><img alt="Linked In" src={linkedin}/></a>
+                            <div style={{width: '10px'}}></div>
+                            <a href={resume}><InsertDriveFile alt="Resume" style={{color: '#FFFFFF', width: '40px', height: '48px'}}/></a>
+                        </div>
                     </div>
                     <ExpansionPanel
                         square

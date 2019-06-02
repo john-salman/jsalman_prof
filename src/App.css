@@ -88,3 +88,24 @@
     transition-duration: .3s;
     transform: scale(5.2, 5.2);
 }
+
+@media only screen and (max-width: 600px){
+    .full-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .about {
+        width: 100%;
+        max-width: 100%;
+        bottom: 10px;
+        position: absolute;
+    }
+    .portfolio-wrap {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0;
+        position: fixed;
+    }
+}

@@ -4,7 +4,7 @@ import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
-//import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import blue from '@material-ui/core/colors/blue';
 
@@ -19,6 +19,7 @@ const primary = blueGrey[500];
 const headshot = require('../Photos/Headshot.png');
 const github = require('../Photos/GitHub.svg');
 const linkedin = require('../Photos/LinkedIn.svg');
+const resume = require('./JS_Resume.pdf');
 
 const theme = createMuiTheme({
     palette: {
@@ -93,6 +94,7 @@ class SideBar extends React.Component {
     };
 
     render() {
+        console.log(resume);
         const { expanded } = this.state;
         return (
             <ThemeProvider theme={theme}>
@@ -100,14 +102,12 @@ class SideBar extends React.Component {
                     <div className="me">
                         <img className="prof-pic" src={headshot} alt="A photo of myself"/>
                         <p className="name">John Salman</p>
-                        <div className="me-left">
-                            <p>jhnsalman@gmail.com</p>
+                        <p>jhnsalman@gmail.com</p><Button type="submit" formAction={resume} target="_blank">Resume</Button>
                             <div className="logo-div">
                                 <a href="https://github.com/john-salman"><img alt="Github" src={github}/></a>
                                 <div style={{width: '15px'}}></div>
-                                <a href="https://www.linkedin.com/in/john-salman/"><img alt="LinkedIn" src={linkedin}/></a>
+                                <a href="https://www.linkedin.com/in/john-salman/"><img alt="Linked In" src={linkedin}/></a>
                             </div>
-                        </div>
                     </div>
                     <ExpansionPanel
                         square

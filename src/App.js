@@ -5,6 +5,7 @@ import {BrowserRouter} from "react-router-dom";
 import Paper from '@material-ui/core/Paper';
 import blue from '@material-ui/core/colors/blue';
 import { createMuiTheme, withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import { ThemeProvider} from '@material-ui/styles';
 
 import './App.css';
@@ -14,15 +15,6 @@ import GalleryCards from "./Pieces/GalleryCards";
 import ArrowLeftRounded from '@material-ui/icons/ArrowLeftRounded';
 import ArrowRightRounded from '@material-ui/icons/ArrowRightRounded';
 
-
-const theme = createMuiTheme({
-    palette: {
-        primary: blue,
-        secondary: {
-            main: '#4dd0e1',
-        },
-    },
-});
 
 const StyledPaper = withStyles({
     root: {
@@ -178,11 +170,14 @@ class App extends Component {
   render() {
 
     return (
-        <ThemeProvider theme={theme}>
         <div className="full-wrap">
+        <Grid container spacing={8}>
+            <Grid item xs={12}>
               <StyledPaper className="about" elevation={2}>
                 <SideBar/>
               </StyledPaper>
+            </Grid>
+            <Grid item xs={12}>
               <div className="portfolio-wrap">
                   <div className={"left-wrap" + (this.state.leftHover ? "-hover" : "")} onClick={() => this.goLeft()} onMouseEnter={() => this.leftHover(true)} onMouseLeave={() => this.leftHover(false)}>
                       <ArrowLeftRounded />
@@ -192,8 +187,9 @@ class App extends Component {
                       <ArrowRightRounded/>
                   </div>
               </div>
-          </div>
-        </ThemeProvider>
+            </Grid>
+          </Grid>
+        </div>
 
     );
   }

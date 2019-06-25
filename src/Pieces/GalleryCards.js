@@ -56,7 +56,7 @@ function GalleryCards (props) {
                 </CardActionArea>
                 <CardActions>
                     <form>
-                        <StyledButton color={'#FFFFFF'} type="submit" formAction={link} size="small" color="primary">
+                        <StyledButton color={'#FFFFFF'} type="submit" formAction={link} size="small">
                             <Code /><p>Source</p>
                         </StyledButton>
                     </form>

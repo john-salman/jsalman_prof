@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter} from "react-router-dom";
 //import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
-import blue from '@material-ui/core/colors/blue';
-import { createMuiTheme, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { ThemeProvider} from '@material-ui/styles';
 
 import './App.css';
 
@@ -49,12 +45,12 @@ class App extends Component {
 
     images = [real, advisor, leg, euclid, cpu, thisWeb];
 
-    assoc_text = ["An implementation of a more accurate C++ double class, works accurately on large floating numbers without error.",
-        "A front-end I designed for an Advising application, is built off a sql server and updates data in real time (server not spinning).",
-        "An application for interpreting LEGv8 programs, modeled after classic debugging programs like GDB.",
+    assoc_text = ["An implementation of a more accurate C++ double class, works accurately on large floating-point numbers without error.",
+        "A front-end I designed for an Advising application, built off a sql server and updates data in real time (server not spinning).",
+        "An application for interpreting LEGv8 assembly programs, modeled after classic debugging programs like GDB.",
         "A formal analysis of multiple algorithms in terms of both time and operational complexity.",
         "An analysis of CPU efficiency under decreasing power limits.",
-        "The code for this website, made from scratch using React",];
+        "The code for this website. Made from scratch using React, deployed with Netlify.",];
 
     assoc_link = ['https://github.com/john-salman/Real-Class',
         "https://github.com/john-salman/Advisor_UI",
@@ -172,12 +168,12 @@ class App extends Component {
     return (
         <div className="full-wrap">
         <Grid container spacing={8}>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
               <StyledPaper className="about" elevation={2}>
                 <SideBar/>
               </StyledPaper>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
               <div className="portfolio-wrap">
                   <div className={"left-wrap" + (this.state.leftHover ? "-hover" : "")} onClick={() => this.goLeft()} onMouseEnter={() => this.leftHover(true)} onMouseLeave={() => this.leftHover(false)}>
                       <ArrowLeftRounded />

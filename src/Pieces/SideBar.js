@@ -4,7 +4,6 @@ import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import blue from '@material-ui/core/colors/blue';
 import InsertDriveFile from '@material-ui/icons/InsertDriveFile';
@@ -12,8 +11,6 @@ import InsertDriveFile from '@material-ui/icons/InsertDriveFile';
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-
-import { Scrollbars } from 'react-custom-scrollbars';
 
 import './SideBar.css';
 
@@ -125,18 +122,18 @@ class SideBar extends React.Component {
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                             <Typography>
-                                    <p>There is nothing better than learning new technology, writing quality code, and first time compiles. I am a
-                                        a graduating senior from the Computer Science Department at Sonoma State. I'm hungry for the opportunity to
+                                    <p>There is nothing better than learning new technology, writing quality code, and first time compiles. I am
+                                        recent graduate from the Computer Science Department at Sonoma State. I'm hungry for the opportunity to
                                         begin my professional career, where I can spend my days contributing to projects bigger than myself. Software
                                         has given so much to this world already, and I'm looking to make my mark.
                                     </p>
                                     <p>In school, I have always gone above and beyond to gain the most in depth understanding of all domains of computer science.
-                                        I take pride in being a jack-of-all-trades, and enjoy throwing myself into the deep end. Building large scale applications
-                                        will always put a smile on my face, but I get just as much out of building websites or digging around beneath operating systems.
+                                        I take pride in being a jack-of-all-trades, and enjoy throwing myself into the deep end. The best programs to build are
+                                        those that push me to write efficient and effective code, and I also love building websites and configuring back-end systems.
                                     </p>
                                     <p>Rock climbing is my next greatest passion. It is hard to beat the feeling of topping out on a multi-week project route, but whenever
                                         I can get my blood pumping and sweat running is a good time to me. I look for any chance to get outside, be it trail-running,
-                                        disk-golf, fishing, gardening, camping, and anything that helps me finish the day dirt-covered and tired.
+                                        disk-golf, fishing, gardening, camping, hiking with my dog, or anything that helps me finish the day dirt-covered and tired.
                                     </p>
                             </Typography>
                         </ExpansionPanelDetails>
@@ -152,7 +149,7 @@ class SideBar extends React.Component {
                         <ExpansionPanelDetails>
                             <Typography>
                                 <p><strong>Sonoma State University</strong>, Rohnert Park</p>
-                                <p><em>B.S., Cum Laude with Distinction</em>, Computer Science</p>
+                                <p><em>B.S. with Distinction, Cum Laude</em>, Computer Science</p>
                                 <p>Graduation Date: May 2019</p>
                                 <p>GPA: 3.52</p>
                             </Typography>
@@ -168,11 +165,11 @@ class SideBar extends React.Component {
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                             <Typography>
-                                <p><strong>Proficient Languages :</strong> C++, Python, Javascript (+ NodeJS), HTML, CSS, C, SQL</p>
-                                <p><strong>Familiar Languages :</strong> Bash, Scheme, LaTeX</p>
+                                <p><strong>Proficient Languages :</strong> C/C++, Python, Javascript, HTML, SQL</p>
+                                <p><strong>Familiar Languages :</strong> Bash, Scheme, LaTeX, CSS, C#</p>
                                 <p><strong>Database :</strong> MySQL, MariaDB, AWSCloud, Firebase</p>
-                                <p><strong>Framework :</strong> MVC, React(Native), Amazon Alexa</p>
-                                <p><strong>Misc. :</strong> Unix Command Line, CPU Analysis, Algorithm Analysis, Language Design</p>
+                                <p><strong>Framework :</strong>React(Native), Amazon Alexa, NodeJS, .NET</p>
+                                <p><strong>Misc. :</strong> Unix Command Line, CPU Analysis, Algorithm Analysis, Language Design, Git</p>
                             </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>

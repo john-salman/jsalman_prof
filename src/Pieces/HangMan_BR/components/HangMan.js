@@ -67,7 +67,7 @@ class HangMan extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:80');
+   // fetch('http://localhost:80');
 
 
   }
@@ -238,12 +238,9 @@ class HangMan extends Component {
   undo() {
     if (this.state.history.length !== 1) {
       let _history = JSON.parse(JSON.stringify(this.state.history.slice()));
-      console.log(_history[_history.length - 1]);
       let temp_state = {};
       _history.pop();
       let reverted_state = JSON.parse(JSON.stringify(Object.assign(temp_state, _history[_history.length - 1])));
-      console.log("Revert", reverted_state);
-      //_history.pop()
 
       let _current_word = reverted_state.current_word;
       let _hang_man_state = reverted_state.hang_man_state;
@@ -260,7 +257,6 @@ class HangMan extends Component {
         victory_condition: _victory_condition
       });
     }
-    console.log("State after undo", this.state)
   }
 
   render() {

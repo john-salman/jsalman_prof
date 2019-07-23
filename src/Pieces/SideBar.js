@@ -4,6 +4,7 @@ import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import blue from '@material-ui/core/colors/blue';
 import InsertDriveFile from '@material-ui/icons/InsertDriveFile';
@@ -193,6 +194,18 @@ class SideBar extends React.Component {
                                     shelters efficiently. I volunteered for 10 days, and coordinated with county officials and other volunteer agencies to help local shelters
                                     obtain critical supplies.</p>
                             </Typography>
+                        </ExpansionPanelDetails>
+                    </ExpansionPanel>
+                    <ExpansionPanel
+                        square
+                        expanded={expanded === 'panel5'}
+                        onChange={this.handleChange('panel5')}
+                    >
+                        <ExpansionPanelSummary>
+                            <Title className="title">Hang Man</Title>
+                        </ExpansionPanelSummary>
+                        <ExpansionPanelDetails>
+                            <Button variant="contained" color="secondary" onClick={() => this.props.changeToHangMan()}>Hang Man</Button>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
                 </div>

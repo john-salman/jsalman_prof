@@ -10,7 +10,7 @@ import SideBar from './Pieces/SideBar';
 import GalleryCards from "./Pieces/GalleryCards";
 import ArrowLeftRounded from '@material-ui/icons/ArrowLeftRounded';
 import ArrowRightRounded from '@material-ui/icons/ArrowRightRounded';
-
+import HangMan from './Pieces/HangMan_BR/components/HangMan';
 
 const StyledPaper = withStyles({
     root: {
@@ -71,8 +71,10 @@ class App extends Component {
             user_control: false,
             rightHover: false,
             leftHover: false,
-        }
+            hangMan: false
+        };
 
+        this.changeToHangMan = this.changeToHangMan.bind(this);
     }
 
     componentDidMount() {
@@ -162,32 +164,49 @@ class App extends Component {
         })
     }
 
+    changeToHangMan() {
+        let _hangMan = true;
+        this.setState({
+            hangMan: _hangMan
+        })
+    }
+
 
   render() {
 
-    return (
-        <div className="full-wrap">
-        <Grid container spacing={8}>
-            <Grid item xs={12} sm={6}>
-              <StyledPaper className="about" elevation={2}>
-                <SideBar/>
-              </StyledPaper>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <div className="portfolio-wrap">
-                  <div className={"left-wrap" + (this.state.leftHover ? "-hover" : "")} onClick={() => this.goLeft()} onMouseEnter={() => this.leftHover(true)} onMouseLeave={() => this.leftHover(false)}>
-                      <ArrowLeftRounded />
-                  </div>
-                  <GalleryCards title={this.state.title} image={this.state.image} link={this.state.link} text={this.state.text}/>
-                  <div className={"right-wrap" + (this.state.rightHover ? "-hover" : "")} onClick={() => this.goRight()} onMouseEnter={() => this.rightHover(true)} onMouseLeave={() => this.rightHover(false)}>
-                      <ArrowRightRounded/>
-                  </div>
-              </div>
-            </Grid>
-          </Grid>
-        </div>
+    if (this.state.hangMan) {
+        return <HangMan/>
+    } else {
+        return (
 
-    );
+            <div className="full-wrap">
+                <Grid container spacing={8}>
+                    <Grid item xs={12} sm={6}>
+                        <StyledPaper className="about" elevation={2}>
+                            <SideBar changeToHangMan={this.changeToHangMan}/>
+                        </StyledPaper>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <div className="portfolio-wrap">
+                            <div className={"left-wrap" + (this.state.leftHover ? "-hover" : "")}
+                                 onClick={() => this.goLeft()} onMouseEnter={() => this.leftHover(true)}
+                                 onMouseLeave={() => this.leftHover(false)}>
+                                <ArrowLeftRounded/>
+                            </div>
+                            <GalleryCards title={this.state.title} image={this.state.image} link={this.state.link}
+                                          text={this.state.text}/>
+                            <div className={"right-wrap" + (this.state.rightHover ? "-hover" : "")}
+                                 onClick={() => this.goRight()} onMouseEnter={() => this.rightHover(true)}
+                                 onMouseLeave={() => this.rightHover(false)}>
+                                <ArrowRightRounded/>
+                            </div>
+                        </div>
+                    </Grid>
+                </Grid>
+            </div>
+
+        );
+    }
   }
 }
 

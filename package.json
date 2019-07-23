@@ -7,9 +7,11 @@
     "@material-ui/icons": "^4.0.1",
     "@material-ui/styles": "^4.0.1",
     "inline-style-prefixer": "^5.0.4",
+    "install": "^0.13.0",
+    "npm": "^6.10.2",
     "react": "^16.8.5",
     "react-custom-scrollbars": "^4.2.1",
-    "react-dom": "^16.8.5",
+    "react-dom": "^16.8.6",
     "react-fade": "^1.1.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"

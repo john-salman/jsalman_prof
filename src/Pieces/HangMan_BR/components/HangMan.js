@@ -89,7 +89,7 @@ class HangMan extends Component {
   // Expected Param: A single character representing the user guess.
   submitLetter(letter) {
     let _victory_condition = "";
-    let _guesses = this.state.guesses + 1;
+    let _guesses = this.state.guesses;
     let _current_word = JSON.parse(JSON.stringify(this.state.current_word.slice()));
     let _hang_man_state = this.state.hang_man_state;
     let _current_hang_man = hang_man_drawings[_hang_man_state];
@@ -111,6 +111,7 @@ class HangMan extends Component {
 
     } else { // The letter is not part of the solution word
       _hang_man_state++;
+      _guesses++;
       _current_hang_man = hang_man_drawings[_hang_man_state];
       if (_guesses === 7) {
         _victory_condition = "Lost";

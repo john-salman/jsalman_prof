@@ -196,18 +196,6 @@ class SideBar extends React.Component {
                             </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
-                    <ExpansionPanel
-                        square
-                        expanded={expanded === 'panel5'}
-                        onChange={this.handleChange('panel5')}
-                    >
-                        <ExpansionPanelSummary>
-                            <Title className="title">Hang Man</Title>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <Button variant="contained" color="secondary" onClick={() => this.props.changeToHangMan()}>Hang Man</Button>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
                 </div>
             </ThemeProvider>
         );

@@ -16,14 +16,14 @@ const StyledPaper = withStyles({
     root: {
         background: '#3f51b5',
         textAlign: 'center',
-        width: '30%',
-        maxWidth: '30%',
-        left: 0,
-        maxHeight: '100%',
-        position: 'fixed',
         overflowY: 'auto',
         color: 'white',
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        marginTop: '15px',
+        height: '100%',
+        maxHeight: '100vh',
+        top: '0',
+        bottom: '0',
     },
     label: {
         textTransform: 'capitalize',
@@ -175,33 +175,33 @@ class App extends Component {
   render() {
 
     return (
-
         <div className="full-wrap">
-            <Grid container spacing={8}>
-                <Grid item xs={12} sm={6}>
-                    <StyledPaper className="about" elevation={2}>
-                        <SideBar changeToHangMan={this.changeToHangMan}/>
-                    </StyledPaper>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <div className="portfolio-wrap">
-                        <div className={"left-wrap" + (this.state.leftHover ? "-hover" : "")}
-                             onClick={() => this.goLeft()} onMouseEnter={() => this.leftHover(true)}
-                             onMouseLeave={() => this.leftHover(false)}>
-                            <ArrowLeftRounded/>
-                        </div>
-                        <GalleryCards title={this.state.title} image={this.state.image} link={this.state.link}
-                                      text={this.state.text}/>
-                        <div className={"right-wrap" + (this.state.rightHover ? "-hover" : "")}
-                             onClick={() => this.goRight()} onMouseEnter={() => this.rightHover(true)}
-                             onMouseLeave={() => this.rightHover(false)}>
-                            <ArrowRightRounded/>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-lg-4 col-md-4 col-xs-12">
+                        <StyledPaper className="about" elevation={2}>
+                            <SideBar changeToHangMan={this.changeToHangMan}/>
+                        </StyledPaper>
+                    </div>
+                    <div className="col-lg-8 col-md-8 col-xs-12">
+                        <div className="portfolio-wrap">
+                            <div className={"left-wrap" + (this.state.leftHover ? "-hover" : "")}
+                                 onClick={() => this.goLeft()} onMouseEnter={() => this.leftHover(true)}
+                                 onMouseLeave={() => this.leftHover(false)}>
+                                <ArrowLeftRounded/>
+                            </div>
+                            <GalleryCards title={this.state.title} image={this.state.image} link={this.state.link}
+                                          text={this.state.text}/>
+                            <div className={"right-wrap" + (this.state.rightHover ? "-hover" : "")}
+                                 onClick={() => this.goRight()} onMouseEnter={() => this.rightHover(true)}
+                                 onMouseLeave={() => this.rightHover(false)}>
+                                <ArrowRightRounded/>
+                            </div>
                         </div>
                     </div>
-                </Grid>
-            </Grid>
+                </div>
+            </div>
         </div>
-
     );
 
   }

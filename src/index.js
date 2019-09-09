@@ -8,6 +8,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import TopBar from './Pieces_V2/TopBar';
+
 
 
 ReactDOM.render(<App />, document.getElementById('root'));

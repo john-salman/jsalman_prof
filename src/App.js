@@ -6,7 +6,8 @@ import Grid from '@material-ui/core/Grid';
 
 import './App.css';
 
-import SideBar from './Pieces/SideBar';
+//import SideBar from './Pieces/SideBar';
+import TopBar from './Pieces_V2/TopBar';
 import GalleryCards from "./Pieces/GalleryCards";
 import ArrowLeftRounded from '@material-ui/icons/ArrowLeftRounded';
 import ArrowRightRounded from '@material-ui/icons/ArrowRightRounded';
@@ -176,15 +177,11 @@ class App extends Component {
 
     return (
         <div className="full-wrap">
-            <div className="container-fluid">
                 <div className="row">
-                    <div className="col-lg-4 col-md-4 col-xs-12">
-                        <StyledPaper className="about" elevation={2}>
-                            <SideBar changeToHangMan={this.changeToHangMan}/>
-                        </StyledPaper>
+                    <div className="col-lg-12 col-md-4 col-xs-12">
+                        <TopBar />
                     </div>
-                    <div className="col-lg-8 col-md-8 col-xs-12">
-                        <div className="portfolio-wrap">
+                    <div className="col-lg-12 col-md-8 col-xs-12 portfolio-wrap">
                             <div className={"left-wrap" + (this.state.leftHover ? "-hover" : "")}
                                  onClick={() => this.goLeft()} onMouseEnter={() => this.leftHover(true)}
                                  onMouseLeave={() => this.leftHover(false)}>
@@ -195,12 +192,10 @@ class App extends Component {
                             <div className={"right-wrap" + (this.state.rightHover ? "-hover" : "")}
                                  onClick={() => this.goRight()} onMouseEnter={() => this.rightHover(true)}
                                  onMouseLeave={() => this.rightHover(false)}>
-                                <ArrowRightRounded/>
+                                <ArrowRightRounded />
                             </div>
-                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     );
 

@@ -14,7 +14,7 @@ import Code from '@material-ui/icons/Code';
 const styles = {
     card: {
         maxWidth: 450,
-        backgroundColor: '#5c6bc0',
+        backgroundColor: '#2c3e50',
     },
     media: {
         height: 300,

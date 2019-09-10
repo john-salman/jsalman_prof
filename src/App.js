@@ -1,39 +1,14 @@
 import React, { Component } from 'react';
-//import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 
 import './App.css';
 
-//import SideBar from './Pieces/SideBar';
 import TopBar from './Pieces_V2/TopBar';
 import GalleryCards from "./Pieces/GalleryCards";
 import ArrowLeftRounded from '@material-ui/icons/ArrowLeftRounded';
 import ArrowRightRounded from '@material-ui/icons/ArrowRightRounded';
-//import HangMan from './Pieces/HangMan_BR/components/HangMan';
-
-const StyledPaper = withStyles({
-    root: {
-        background: '#3f51b5',
-        textAlign: 'center',
-        overflowY: 'auto',
-        color: 'white',
-        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-        marginTop: '15px',
-        height: '100%',
-        maxHeight: '100vh',
-        top: '0',
-        bottom: '0',
-    },
-    label: {
-        textTransform: 'capitalize',
-    },
-})(Paper);
 
 const real = require('./Photos/Real.PNG');
 const euclid = require('./Photos/Euclid.png');
-//const masterMind = require('./Photos/MasterMind.PNG');
 const thisWeb = require('./Photos/This.PNG');
 const cpu = require('./Photos/CPU.png');
 const leg = require('./Photos/LEGv8.PNG');
@@ -72,10 +47,7 @@ class App extends Component {
             user_control: false,
             rightHover: false,
             leftHover: false,
-            //hangMan: false
         };
-
-       // this.changeToHangMan = this.changeToHangMan.bind(this);
     }
 
     componentDidMount() {
@@ -164,13 +136,6 @@ class App extends Component {
             user_control: true,
         })
     }
-
-   /*changeToHangMan() {
-        let _hangMan = true;
-        this.setState({
-            hangMan: _hangMan
-        })
-    }*/
 
 
   render() {

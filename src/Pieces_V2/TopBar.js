@@ -94,7 +94,7 @@ class TopBar extends React.Component {
                     <Toolbar id="tool-bar">
                         <div className="row">
                             <div className="col-lg-3 col-xs-6 top-bar-container" id="personal-info">
-                                <p>John Salman</p>
+                                <p id="name"><strong>John Salman</strong></p>
                                 <p>jhnsalman@gmail.com | (805) 722-7664</p>
                                 <div className="logo-div">
                                     <a href="https://github.com/john-salman"><img alt="Github" src={github}/></a>

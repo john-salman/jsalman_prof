@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-
+ 
 import TopBar from './Pieces_V2/TopBar';
 import GalleryCards from "./Pieces/GalleryCards";
 import ArrowLeftRounded from '@material-ui/icons/ArrowLeftRounded';

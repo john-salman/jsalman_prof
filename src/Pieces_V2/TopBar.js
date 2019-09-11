@@ -3,9 +3,12 @@ import {makeStyles, withStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import InsertDriveFile from '@material-ui/icons/InsertDriveFile';
 
 import './TopBar.css';
@@ -74,6 +77,19 @@ const ExpansionPanelDetails = withStyles(theme => ({
     },
 }))(MuiExpansionPanelDetails);
 
+/*
+const useStyles = makeStyles(theme => ({
+    root: {
+        flexGrow: 1,
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    title: {
+        flexGrow: 1,
+    },
+}));
+*/
 class TopBar extends React.Component {
 
     state = {
@@ -87,6 +103,7 @@ class TopBar extends React.Component {
     };
 
     render() {
+        //const classes = useStyles();
         const { expanded } = this.state;
         return (
             <div style={{flexGrow: 1}}>
@@ -119,7 +136,7 @@ class TopBar extends React.Component {
                                     <ExpansionPanelDetails>
                                         <Typography>
                                             <p>I am a recent graduate with distinction from the Computer Science Department of Sonoma State University,
-                                                actively pursuing software engineering positions.</p>
+                                                actively purusing software engineering positions.</p>
                                         </Typography>
                                     </ExpansionPanelDetails>
                                 </ExpansionPanel>

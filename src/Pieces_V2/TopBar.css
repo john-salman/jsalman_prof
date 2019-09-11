@@ -5,9 +5,16 @@
 }
 
 .prof-pic {
-    padding-bottom: 10px;
-    align-items: center;
-    margin: auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    max-width: 225px;
+    max-height: 225px;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    outline: 3px solid rgba(255,255, 255, 0.5);
 }
 
 .logo-div {
@@ -34,6 +41,10 @@
     background: linear-gradient(to top, #bdc3c7, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+#name {
+    font-size: 48px;
+}
+
 @media only screen and (min-width: 600px){
     #left-summary {
         border-radius: 15px 0px 0px 15px;
@@ -48,6 +59,10 @@
     #right-summary {
         border-radius: 0px 15px 15px 0px;
         border-left: 1.5px solid #FFFFFF;
+    }
+
+    .prof-pic {
+        margin-right: 20%;
     }
 }
 

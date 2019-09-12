@@ -1,34 +1,45 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import Code from '@material-ui/icons/Code';
 
 import './ProjectCard.css';
+
+/*
+* File: ProjectCard.js
+* Description: This is the stencil for the portfolio section of the website. In its basic form its a
+*              basic card with a button that redirects to github repo's with source code.
+* Local File Dependencies: ProjectCard.css for styling
+* */
 
 export default function ProjectCard(props) {
     const { title, image, link, text} = props;
 
     return (
         <Card className="card">
-            <a href={link}>
                 <CardContent>
-                    <Typography className="card-title" color="textSecondary" gutterBottom>
-                        {title}
-                    </Typography>
+                    <p id="card-title">
+                        <strong>{title}</strong>
+                    </p>
                     <CardMedia
-                        className="card-media"
+                        id="card-media"
                         image={image}
                         title={title}
                     />
-                    <Typography className="card-pos" color="textSecondary">
-                        {text}
-                    </Typography>
+                    <div id="text-wrap">
+                        <p id="card-pos">
+                            {text}
+                        </p>
+                    </div>
+                    <form>
+                        <Button style={{backgroundColor: '#bdc3c7'}} type="submit" formAction={link} size="small">
+                            <Code /><p>Source</p>
+                        </Button>
+                    </form>
                 </CardContent>
-            </a>
         </Card>
     );
 }
+

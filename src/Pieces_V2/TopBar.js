@@ -1,17 +1,21 @@
 import React from 'react';
-import {makeStyles, withStyles} from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import InsertDriveFile from '@material-ui/icons/InsertDriveFile';
 
 import './TopBar.css';
+
+/*
+* File: TopBar
+* Description: This component renders the bar along the top of the screen, contains name, contact info, professional
+*              profiles, resume, and some extra info about myself. Holds a horizontal layout on desktop, vertical on mobile.
+* Local File Dependencies: TopBar.css for styling, {github, linkedin, resume, headshot} are additional icons
+* */
 
 const github = require('../Photos/GitHub.svg');
 const linkedin = require('../Photos/LinkedIn.svg');
@@ -77,19 +81,6 @@ const ExpansionPanelDetails = withStyles(theme => ({
     },
 }))(MuiExpansionPanelDetails);
 
-/*
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    title: {
-        flexGrow: 1,
-    },
-}));
-*/
 class TopBar extends React.Component {
 
     state = {
@@ -112,7 +103,7 @@ class TopBar extends React.Component {
                         <div className="row">
                             <div className="col-lg-3 col-xs-6 top-bar-container" id="personal-info">
                                 <p id="name"><strong>John Salman</strong></p>
-                                <p>jhnsalman@gmail.com | (805) 722-7664</p>
+                                <p id="contact-info">jhnsalman@gmail.com | (805) 722-7664</p>
                                 <div className="logo-div">
                                     <a href="https://github.com/john-salman"><img alt="Github" src={github}/></a>
                                     <div style={{width: '15px'}}></div>

@@ -136,7 +136,7 @@ class TopBar extends React.Component {
                                     <ExpansionPanelDetails>
                                         <Typography>
                                             <p>I am a recent graduate with distinction from the Computer Science Department of Sonoma State University,
-                                                actively purusing software engineering positions.</p>
+                                                actively pursuing software engineering positions.</p>
                                         </Typography>
                                     </ExpansionPanelDetails>
                                 </ExpansionPanel>

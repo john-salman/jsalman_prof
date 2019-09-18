@@ -97,7 +97,7 @@ class TopBar extends React.Component {
         //const classes = useStyles();
         const { expanded } = this.state;
         return (
-            <div style={{flexGrow: 1}}>
+            <div style={{flexGrow: 1}} >
                 <AppBar position="static" id="app-bar">
                     <Toolbar id="tool-bar">
                         <div className="row">
@@ -124,10 +124,12 @@ class TopBar extends React.Component {
                                     <ExpansionPanelSummary  id="left-summary">
                                         <Title>About Me</Title>
                                     </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails>
+                                    <ExpansionPanelDetails id="left-content">
                                         <Typography>
                                             <p>I am a recent graduate with distinction from the Computer Science Department of Sonoma State University,
                                                 actively pursuing software engineering positions.</p>
+                                            <p>I pride myself on maintaining a wide focus within software engineering. Picking up new technology and
+                                                exploring new frontiers within the domain is what excites me. </p>
                                         </Typography>
                                     </ExpansionPanelDetails>
                                 </ExpansionPanel>
@@ -141,7 +143,7 @@ class TopBar extends React.Component {
                                     <ExpansionPanelSummary id="center-summary">
                                         <Title className="title">Education</Title>
                                     </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails>
+                                    <ExpansionPanelDetails id="center-content">
                                         <Typography>
                                             <p><strong>Sonoma State University</strong>, Rohnert Park</p>
                                             <p><em>B.S. with Distinction, Cum Laude</em>, Computer Science</p>
@@ -160,7 +162,7 @@ class TopBar extends React.Component {
                                     <ExpansionPanelSummary id="right-summary">
                                         <Title className="title">Technical Proficiencies</Title>
                                     </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails>
+                                    <ExpansionPanelDetails id="right-content">
                                         <Typography>
                                             <p><strong>Proficient Languages :</strong> C/C++, Python, Javascript, HTML, SQL</p>
                                             <p><strong>Familiar Languages :</strong> Bash, Scheme, LaTeX, CSS, C#</p>

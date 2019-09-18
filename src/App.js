@@ -79,7 +79,7 @@ class App extends Component {
         return (
             <div className="full-wrap">
                     <div className="row">
-                        <div className="col-lg-12 col-xs-12">
+                        <div className="col-lg-12 col-xs-12" id="top-bar-wrap">
                             <TopBar />
                         </div>
                         <div className="col-lg-12 col-xs-12 portfolio-wrap">

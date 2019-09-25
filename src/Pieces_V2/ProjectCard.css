@@ -1,21 +1,29 @@
-.card {
-    min-width: 350px;
+div.card {
+    min-width: 353px;
+    border: 2px solid transparent;
+    padding: auto;
 }
 
-#card-media {
+div.card-hover {
+    min-width: 353px;
+    border: 2px solid;
+    -webkit-border-image: url("https://media3.giphy.com/media/8Z5KQIxj7W0t8zzYyR/giphy.gif?cid=790b76113eb00d99ab8d2496db623bc2e76569a488448d84&rid=giphy.gif") 120 120 120 120 stretch;
+    -moz-border-image: url("https://media3.giphy.com/media/8Z5KQIxj7W0t8zzYyR/giphy.gif?cid=790b76113eb00d99ab8d2496db623bc2e76569a488448d84&rid=giphy.gif") 120 120 120 120 stretch;
+    border-image: url("https://media3.giphy.com/media/8Z5KQIxj7W0t8zzYyR/giphy.gif?cid=790b76113eb00d99ab8d2496db623bc2e76569a488448d84&rid=giphy.gif") 120 120 120 120 stretch;
+    padding: auto;
+}
+
+div#card-media {
     height: 0;
     padding-top: 56.25%;
 }
 
-#card-title {
+p#card-title {
     font-size: 20px;
 }
 
-#card-text {
-    font-size: 16px;
-}
 
-#text-wrap {
+div#text-wrap {
     height: 85px;
     max-height: 85px;
     margin-top: 5px;

@@ -15,10 +15,11 @@ import './ProjectCard.css';
 * */
 
 export default function ProjectCard(props) {
-    const { title, image, link, text} = props;
+    const { title, image, link, text, cardHoverChange, card_id, isCurrent} = props;
 
     return (
-        <Card className="card">
+        <Card className={"card" + isCurrent} onMouseEnter={() => cardHoverChange(card_id)}
+              onMouseLeave={() => cardHoverChange(card_id)}>
                 <CardContent>
                     <p id="card-title">
                         <strong>{title}</strong>
@@ -29,7 +30,7 @@ export default function ProjectCard(props) {
                         title={title}
                     />
                     <div id="text-wrap">
-                        <p id="card-pos">
+                        <p>
                             {text}
                         </p>
                     </div>

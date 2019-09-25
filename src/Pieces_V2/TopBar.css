@@ -1,8 +1,8 @@
-.top-bar-container {
+div.top-bar-container {
     padding: 0;
 }
 
-.prof-pic {
+img.prof-pic {
     display: block;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -15,81 +15,81 @@
     outline: 3px solid rgba(255,255, 255, 0.5);
 }
 
-.logo-div {
+div.logo {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-#personal-info {
+div#personal-info {
     text-align: center;
     padding-top: 10px;
 }
 
-#app-bar {
+header#app-bar {
     background: #bdc3c7; /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #bdc3c7, #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #bdc3c7, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#name {
+p#name {
     font-size: 48px;
 }
 
-#contact-info {
+p#contact-info {
     font-size: x-large;
 }
 
 @media only screen and (min-width: 992px){
-    #left-summary {
+    div#left-summary {
         border-radius: 15px 0px 0px 15px;
         border-right: 1.5px solid #3385ff;
         margin-left: 15%;
     }
 
-    #center-summary {
+    div#center-summary {
         border-left: 1.5px solid #3385ff;
         border-right: 1.5px solid #3385ff;
     }
 
-    #right-summary {
+    div#right-summary {
         border-radius: 0px 15px 15px 0px;
         border-left: 1.5px solid #3385ff;
         margin-right: 27%;
     }
 
-    .prof-pic {
+    div.prof-pic {
         margin-right: 20%;
     }
 }
 
 @media only screen and (max-width: 991px) {
-    #left-summary {
+    div#left-summary {
         border-top: 2px solid #bdc3c7;
     }
 
-    #left-content {
+    div#left-content {
         margin-left: 2%
     }
 
-    #center-summary {
+    div#center-summary {
         border-top: 2px solid #bdc3c7;
     }
 
-    #center-content {
+    div#center-content {
         margin-left: 2%;
     }
 
-    #right-summary {
+    div#right-summary {
         border-top: 2px solid #bdc3c7;
     }
 
-    #right-content {
+    div#right-content {
         margin-left: 2%;
     }
 
-    #top-bar-wrap {
+    div#top-bar-wrap {
         padding: 0;
         width: 100%;
     }

@@ -61,38 +61,53 @@ class App extends Component {
         super(props);
 
         this.state = {
-            title: this.titles[0],
-            image: this.images[0],
-            text: this.assoc_text[0],
-            link: this.assoc_link[0],
-            index: 0,
-            user_control: false,
-            rightHover: false,
-            leftHover: false,
+            currentCard: "",
+            expanded: '',
         };
 
+        this.cardHoverChange = this.cardHoverChange.bind(this);
+        this.topBarChange = this.topBarChange.bind(this);
     }
+
+    cardHoverChange = (_card_id) => {
+        let new_currentCard = _card_id;
+        this.setState( {
+            currentCard: new_currentCard,
+        });
+    };
+
+    topBarChange = panel => (event, expanded) => {
+        this.setState({
+            expanded: expanded ? panel : false,
+        });
+    };
 
   render() {
 
-        let titles = this.titles;
+        const titles = this.titles;
         return (
             <div className="full-wrap">
                     <div className="row">
                         <div className="col-lg-12 col-xs-12" id="top-bar-wrap">
-                            <TopBar />
+                            <TopBar
+                                expanded={this.state.expanded}
+                                topBarChange={this.topBarChange}
+                            />
                         </div>
                         <div className="col-lg-12 col-xs-12 portfolio-wrap">
                             <div className="container">
                                 <div className="row">
                                     {
                                         titles.map((title, index) =>
-                                            <div className="col-lg-4 project-card">
+                                            <div className="col-lg-4 project-card" >
                                                 <ProjectCard
                                                     title={title}
                                                     image={this.images[index]}
                                                     text={this.assoc_text[index]}
                                                     link={this.assoc_link[index]}
+                                                    cardHoverChange={this.cardHoverChange}
+                                                    card_id={index}
+                                                    isCurrent={index === this.state.currentCard ? "-hover" : ""}
                                                 />
                                             </div>
                                         )

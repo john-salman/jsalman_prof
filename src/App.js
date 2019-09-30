@@ -61,21 +61,21 @@ class App extends Component {
         super(props);
 
         this.state = {
-            currentCard: "",
+            //currentCard: "",
             expanded: '',
         };
 
-        this.cardHoverChange = this.cardHoverChange.bind(this);
+        //this.cardHoverChange = this.cardHoverChange.bind(this);
         this.topBarChange = this.topBarChange.bind(this);
     }
-
+    /*
     cardHoverChange = (_card_id) => {
         let new_currentCard = _card_id;
         this.setState( {
             currentCard: new_currentCard,
         });
     };
-
+    */
     topBarChange = panel => (event, expanded) => {
         this.setState({
             expanded: expanded ? panel : false,
@@ -105,9 +105,9 @@ class App extends Component {
                                                     image={this.images[index]}
                                                     text={this.assoc_text[index]}
                                                     link={this.assoc_link[index]}
-                                                    cardHoverChange={this.cardHoverChange}
+                                                    /*cardHoverChange={this.cardHoverChange}
                                                     card_id={index}
-                                                    isCurrent={index === this.state.currentCard ? "-hover" : ""}
+                                                    isCurrent={index === this.state.currentCard ? "-hover" : ""}*/
                                                 />
                                             </div>
                                         )

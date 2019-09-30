@@ -4,7 +4,7 @@ div.card {
     padding: auto;
 }
 
-div.card-hover {
+div.card:hover{
     min-width: 353px;
     border: 2px solid;
     -webkit-border-image: url("https://media3.giphy.com/media/8Z5KQIxj7W0t8zzYyR/giphy.gif?cid=790b76113eb00d99ab8d2496db623bc2e76569a488448d84&rid=giphy.gif") 120 120 120 120 stretch;

@@ -1,0 +1,24 @@
+div#landing-name {
+    font-size: 95px;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-bottom: -13px;
+}
+
+div#landing-logos-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 11%;
+}
+
+div#landing-about {
+	width: 33%;
+    margin-left: 6%;
+    margin-top: 3%;
+}
+
+div#landing-right-wrapper {
+	margin-top: 13%;
+    margin-right: 8%;
+    float: right;	
+}

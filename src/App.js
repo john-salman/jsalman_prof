@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import './App.css';
 
 //import SideBar from './Pieces/SideBar';
-import TopBar from './Pieces_V2/TopBar';
-import ProjectCard from './Pieces_V2/ProjectCard';
+// import TopBar from './Pieces_V2/TopBar';
+// import ProjectCard from './Pieces_V2/ProjectCard';
 //import GalleryCards from "./Pieces/GalleryCards";
 //import ArrowLeftRounded from '@material-ui/icons/ArrowLeftRounded';
 //import ArrowRightRounded from '@material-ui/icons/ArrowRightRounded';
 //import HangMan from './Pieces/HangMan_BR/components/HangMan';
+
+import LandingMain from './Pieces_V3/Landing';
 
 /*
 * File: App.js
@@ -29,6 +31,40 @@ const advisor = require('./Photos/Advisor.PNG');
 const toDo = require('./Photos/to-do.PNG');
 const worm = require('./Photos/worm.PNG');
 const object = require('./Photos/object.PNG');
+
+const github = require('./Photos/GitHub.svg');
+const linkedin = require('./Photos/LinkedIn.svg');
+const resume = require('./Pieces/JS_Resume.pdf');
+const headshot = require('./Photos/Headshot.png');
+
+const file = require('./Full.txt')
+
+// var fs = require('fs'),
+//     readline = require('readline');
+
+
+// var rd = readline.createInterface({
+//     input: fs.createReadStream(file.toString('utf8')),
+//     output: process.stdout,
+//     console: false
+// });
+
+// rd.on('line', function(line) {
+//     console.log(line);
+// });
+
+
+var url = window.location.href + "/Full.txt";
+
+var jsonFile = new XMLHttpRequest();
+    jsonFile.open("GET",url,true);
+    jsonFile.send();
+
+    jsonFile.onreadystatechange = function() {
+        if (jsonFile.readyState== 4 && jsonFile.status == 200) {
+           console.log(jsonFile.responseText);
+        }
+     }
 
 class App extends Component {
     titles = ["Real Class", "Advising Application", "LEGv8 Interpreter", "Algorithm Analysis", "CPU Benchmarking", "Website Source Code", "To-Do Page", "Worm Project", "Object Class"];
@@ -57,6 +93,9 @@ class App extends Component {
         "https://github.com/joemissamore/cs460p3/blob/master/Object.cpp"
     ];
 
+    about = "I'm a software engineer with experience planning, designing, and developing enterprise web applications. I take pride in finding efficient solutions to complex issues and building expertise in a variety of subjects within Software Engineering.";
+
+
     constructor(props) {
         super(props);
 
@@ -82,41 +121,53 @@ class App extends Component {
         });
     };
 
+
+
+
+
   render() {
+
+
 
         const titles = this.titles;
         return (
-            <div className="full-wrap">
-                    <div className="row">
-                        <div className="col-lg-12 col-xs-12" id="top-bar-wrap">
-                            <TopBar
-                                expanded={this.state.expanded}
-                                topBarChange={this.topBarChange}
-                            />
-                        </div>
-                        <div className="col-lg-12 col-xs-12 portfolio-wrap">
-                            <div className="container">
-                                <div className="row">
-                                    {
-                                        titles.map((title, index) =>
-                                            <div className="col-lg-4 project-card" >
-                                                <ProjectCard
-                                                    title={title}
-                                                    image={this.images[index]}
-                                                    text={this.assoc_text[index]}
-                                                    link={this.assoc_link[index]}
-                                                    /*cardHoverChange={this.cardHoverChange}
-                                                    card_id={index}
-                                                    isCurrent={index === this.state.currentCard ? "-hover" : ""}*/
-                                                />
-                                            </div>
-                                        )
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
+            <LandingMain
+                propAbout={this.about}
+                github={github}
+                linkedin={linkedin}
+                resume={resume}
+            />
+            // <div className="full-wrap">
+            //         <div className="row">
+            //             <div className="col-lg-12 col-xs-12" id="top-bar-wrap">
+            //                 <TopBar
+            //                     expanded={this.state.expanded}
+            //                     topBarChange={this.topBarChange}
+            //                 />
+            //             </div>
+            //             <div className="col-lg-12 col-xs-12 portfolio-wrap">
+            //                 <div className="container">
+            //                     <div className="row">
+            //                         {
+            //                             titles.map((title, index) =>
+            //                                 <div className="col-lg-4 project-card" >
+            //                                     <ProjectCard
+            //                                         title={title}
+            //                                         image={this.images[index]}
+            //                                         text={this.assoc_text[index]}
+            //                                         link={this.assoc_link[index]}
+            //                                         /*cardHoverChange={this.cardHoverChange}
+            //                                         card_id={index}
+            //                                         isCurrent={index === this.state.currentCard ? "-hover" : ""}*/
+            //                                     />
+            //                                 </div>
+            //                             )
+            //                         }
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //         </div>
+            // </div>
         );
 
   }

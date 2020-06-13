@@ -3,12 +3,16 @@ import React, { Component } from 'react';
 import './App.css';
 
 //import SideBar from './Pieces/SideBar';
-import TopBar from './Pieces_V2/TopBar';
+// import TopBar from './Pieces_V2/TopBar';
 import ProjectCard from './Pieces_V2/ProjectCard';
 //import GalleryCards from "./Pieces/GalleryCards";
 //import ArrowLeftRounded from '@material-ui/icons/ArrowLeftRounded';
 //import ArrowRightRounded from '@material-ui/icons/ArrowRightRounded';
 //import HangMan from './Pieces/HangMan_BR/components/HangMan';
+
+import LandingMain from './Pieces_V3/Landing';
+import Background from './Pieces_V3/Background';
+import Footer from './Pieces_V3/Footer';
 
 /*
 * File: App.js
@@ -19,43 +23,50 @@ import ProjectCard from './Pieces_V2/ProjectCard';
 * To Do: lift state up from ProjectCard.js
 * */
 
-
+const UofMLogo = require('./Photos/UofMlogo.png');
 const real = require('./Photos/Real.PNG');
 const euclid = require('./Photos/Euclid.png');
 const thisWeb = require('./Photos/This.PNG');
 const cpu = require('./Photos/CPU.png');
 const leg = require('./Photos/LEGv8.PNG');
 const advisor = require('./Photos/Advisor.PNG');
-const toDo = require('./Photos/to-do.PNG');
-const worm = require('./Photos/worm.PNG');
 const object = require('./Photos/object.PNG');
 
+const github = require('./Photos/GitHub.svg');
+const linkedin = require('./Photos/LinkedIn.svg');
+const resume = require('./Pieces/JS_Resume.pdf');
+const headshot = require('./Photos/Headshot.png');
+
+
 class App extends Component {
-    titles = ["Real Class", "Advising Application", "LEGv8 Interpreter", "Algorithm Analysis", "CPU Benchmarking", "Website Source Code", "To-Do Page", "Worm Project", "Object Class"];
+    titles = ["University of Maine", "Object Class", "LEGv8 Interpreter", "Algorithm Analysis", "CPU Benchmarking", "Website Source Code", "Advising Application"  ];
 
-    images = [real, advisor, leg, euclid, cpu, thisWeb, toDo, worm, object];
+    images = [UofMLogo, real,  object, leg, euclid, cpu, thisWeb, advisor];
 
-    assoc_text = ["An implementation of a more accurate C++ double class, works accurately on large floating-point numbers without error.",
-        "A front-end I designed for an Advising application, built off a sql server and updates data in real time (server not spinning).",
+    assoc_text = [
+        "A revamp of the University of Maine Chemistry Department Site's landing page I developed.",
+        "An implementation of a more accurate C++ double class, works accurately on large floating-point numbers without error.",
+        "A transpiler application I completed with a team for my Senior-Language Design Course.",
         "An application for interpreting LEGv8 assembly programs, modeled after classic debugging programs like GDB.",
         "A formal analysis of multiple algorithms in terms of both time and operational complexity.",
         "An analysis of CPU efficiency under decreasing power limits.",
-        "The code for this website. Made from scratch using React, deployed with Netlify.",
-        "A page that I used to further practice jQuery in conjunction in CSS.",
-        "Final project for my Programming III, intended to test our ability to write order-efficient applications.",
-        "A transpiler application I completed with a team for my Senior-Language Design Course."
+        "The code for this website. Made with React, deployed with Netlify.",
+        "A front-end I designed for an Advising application, built off a sql server and updates data in real time (server not spinning)."
     ];
 
-    assoc_link = ['https://github.com/john-salman/Real-Class',
-        "https://github.com/john-salman/Advisor_UI",
+    assoc_link = [
+        "https://interchemnet.com/newnav/NewNavigator/LoginForm.cfm",
+        "https://github.com/john-salman/Real-Class",
+        "https://github.com/joemissamore/cs460p3/blob/master/Object.cpp",
         "https://github.com/john-salman/LEGv8",
         "https://github.com/john-salman/Algorithm_Analysis_P1",
         "https://github.com/cs385/power_limit",
         "https://github.com/john-salman/jsalman_prof",
-        "https://github.com/john-salman/ToDo_List",
-        "https://github.com/john-salman/cs315_project_5",
-        "https://github.com/joemissamore/cs460p3/blob/master/Object.cpp"
+        "https://github.com/john-salman/Advisor_UI"
     ];
+
+    about = "I'm a software engineer with experience planning, designing, and developing enterprise web applications. I take pride in finding efficient solutions to complex issues and building expertise in a variety of subjects within Software Engineering.";
+
 
     constructor(props) {
         super(props);
@@ -82,41 +93,65 @@ class App extends Component {
         });
     };
 
+
+
+
   render() {
 
+
+
         const titles = this.titles;
-        return (
-            <div className="full-wrap">
-                    <div className="row">
-                        <div className="col-lg-12 col-xs-12" id="top-bar-wrap">
-                            <TopBar
-                                expanded={this.state.expanded}
-                                topBarChange={this.topBarChange}
-                            />
-                        </div>
-                        <div className="col-lg-12 col-xs-12 portfolio-wrap">
-                            <div className="container">
-                                <div className="row">
-                                    {
-                                        titles.map((title, index) =>
-                                            <div className="col-lg-4 project-card" >
-                                                <ProjectCard
-                                                    title={title}
-                                                    image={this.images[index]}
-                                                    text={this.assoc_text[index]}
-                                                    link={this.assoc_link[index]}
-                                                    /*cardHoverChange={this.cardHoverChange}
-                                                    card_id={index}
-                                                    isCurrent={index === this.state.currentCard ? "-hover" : ""}*/
-                                                />
-                                            </div>
-                                        )
-                                    }
+        return ( 
+            <div>
+                <Background />
+                <LandingMain
+                    propAbout={this.about}
+                    github={github}
+                    linkedin={linkedin}
+                    resume={resume}
+                />
+                <div id="carousel-self-link" className="carousel slide carousel-custom-style" data-ride="carousel">
+                  <ol className="carousel-indicators">
+                     {
+                            titles.map((title, index) =>
+                                <li data-target="#carouselExampleIndicators" data-slide-to={index} className={index == 0 ? "active" : ""}></li>
+                            )
+                        }
+                  </ol>
+                  <div class="carousel-inner">
+                   {
+                            titles.map((title, index) =>
+                                <div className={index == 0 ? "carousel-item active" : "carousel-item"} data-interval="5000">
+                                       <ProjectCard
+                                        title={title}
+                                        image={this.images[index]}
+                                        text={this.assoc_text[index]}
+                                        link={this.assoc_link[index]}
+                                        /*cardHoverChange={this.cardHoverChange}
+                                        card_id={index}
+                                        isCurrent={index === this.state.currentCard ? "-hover" : ""}*/
+                                    />
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            )
+                    }
+                  </div>
+                  <a class="carousel-control-prev" href="#carousel-self-link" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carousel-self-link" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+                <Footer 
+                    github={github}
+                    linkedin={linkedin}
+                    resume={resume}
+                />
+
             </div>
+        
         );
 
   }

@@ -80,14 +80,9 @@ div#text-wrap {
     }
 }
 
-@media only screen and (max-width: 640px) { 
+@media only screen and (max-width: 762px) { 
     div.carousel-custom-style {
-        margin-top: 110%;
+        margin-top: 250%;
     }
 }
 
-@media only screen and (max-width: 540px) { 
-    div.carousel-custom-style {
-        margin-top: 130%;
-    }
-}

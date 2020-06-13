@@ -13,7 +13,10 @@ export default function LandingMain(props) {
 				<div id="landing-name">
 					John Salman
 				</div>
-			     <div id="landing-logos-wrapper">
+					<div id="landing-email-wrapper">
+		   			<a id="landing-email-link" href="mailto: jhnsalman@gmail.com">jhnsalman@gmail.com</a>
+		   		</div>
+		   		<div id="landing-logos-wrapper">
                     <a href="https://github.com/john-salman"><img alt="Github" src={github}/></a>
                     <div style={{width: '15px'}}></div>
                     <a href="https://www.linkedin.com/in/john-salman/"><img alt="Linked In" src={linkedin}/></a>
@@ -25,10 +28,12 @@ export default function LandingMain(props) {
 				</div>
 			</div>
 			<div id="landing-right-wrapper">
-			    <p><strong>Sonoma State University</strong>, Rohnert Park</p>
-                <p><em>B.S. with Distinction, Cum Laude</em>, Computer Science</p>
-                <p>Graduation Date: May 2019</p>
-                <p>GPA: 3.52</p>
+				<div id="landing-right-text-wrapper">
+				    <p><strong>Sonoma State University</strong>, Rohnert Park</p>
+	                <p><em>B.S. with Distinction, Cum Laude</em>, Computer Science</p>
+	                <p>Graduation Date: May 2019</p>
+	                <p>GPA: 3.52</p>
+                </div>
 			</div>
 			<div style={{clear:'both'}}></div>
 		</div>

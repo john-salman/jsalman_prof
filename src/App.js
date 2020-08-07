@@ -101,7 +101,7 @@ class App extends Component {
 
 
         const titles = this.titles;
-        return ( 
+        return (
             <div>
                 <Background />
                 <LandingMain
@@ -144,14 +144,14 @@ class App extends Component {
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
-                <Footer 
+                <Footer
                     github={github}
                     linkedin={linkedin}
                     resume={resume}
                 />
 
             </div>
-        
+
         );
 
   }

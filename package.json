@@ -11,7 +11,7 @@
     "inline-style-prefixer": "^5.0.4",
     "install": "^0.13.0",
     "jquery": "^3.4.1",
-    "npm": "^6.14.4",
+    "npm": "^11.9.0",
     "popper.js": "^1.15.0",
     "react": "^16.8.5",
     "react-custom-scrollbars": "^4.2.1",
